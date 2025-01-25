@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "sass:meta";
+
+
+// Pour mettre en pleine largeur une section contenue à l"intérieur d"un container
+@mixin stretch-section-full-width {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+
+

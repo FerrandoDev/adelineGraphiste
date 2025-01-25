@@ -1,0 +1,56 @@
+@use "sass:map";
+
+// permet de cibler tous les containers (.container, .container-sm, etc...)
+[class^="container"] {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; // pas de paddings car tous les container feront 90% de la largeur de lécran, ce qui laissera respirer ces derniers
+    // padding-left: 24px;
+    // padding-right: 24px;
+    // width: 100%;    
+}
+
+.container {
+    max-width: map.get($container-sizes, defaut);
+}
+
+.container-small {
+    max-width: map.get($container-sizes, small);
+}
+
+.container-medium {
+    max-width: map.get($container-sizes, medium);
+}
+
+.container-large {
+    max-width: map.get($container-sizes, large);
+}
+
+.container-fluid {
+    max-width: none;
+    width: 100%;
+}
+
+.section {
+    margin-bottom: $section-gap;
+}
+
+// pour les section qui ont un background-color
+.section-background {
+    margin-bottom: 0;
+    padding-top: $section-gap;
+    padding-bottom: $section-gap;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    & + .section:not(.section-background) {
+        margin-top: $section-gap;
+    }
+}
+
+// sert uniquement si la section est "wrappé" par un container quelqu'il soit
+.section-fluid {
+    @include stretch-section-full-width;
+}

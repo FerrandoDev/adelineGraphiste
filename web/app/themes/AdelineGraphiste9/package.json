@@ -1,0 +1,96 @@
+{
+  "name": "adelinegraphiste",
+  "version": "9.0.10",
+  "author": "Roots <team@roots.io>",
+  "homepage": "https://roots.io/sage/",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roots/sage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roots/sage/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 20.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "android 4",
+    "opera 12"
+  ],
+  "scripts": {
+    "build": "webpack --progress --config resources/assets/build/webpack.config.js",
+    "build:production": "webpack --mode=production --progress --config resources/assets/build/webpack.config.js",
+    "build:profile": "webpack --progress --profile --json --config resources/assets/build/webpack.config.js",
+    "start": "webpack --watch --config resources/assets/build/webpack.config.js",
+    "rmdist": "rimraf dist",
+    "lint": "npm run -s lint:scripts && npm run -s lint:styles",
+    "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
+    "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
+    "test": "npm run -s lint"
+  },
+  "devDependencies": {
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "bs-html-injector": "~3.0",
+    "buble": "^0.20.0",
+    "buble-loader": "^0.5.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-globs-webpack-plugin": "^0.3.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.1",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "cssnano": "^6.1.2",
+    "eslint": "^8.47.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-webpack-plugin": "^4.1.0",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "^6.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "import-glob": "~1.5",
+    "mini-css-extract-plugin": "^2.8.1",
+    "node-notifier": "^10.0.1",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.4",
+    "postcss-safe-parser": "^7.0.0",
+    "postcss-sort-media-queries": "^5.2.0",
+    "resolve-url-loader": "^5.0.0",
+    "rimraf": "^5.0.5",
+    "sass": "^1.74.1",
+    "sass-loader": "^14.1.1",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-webpack-plugin": "^5.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.91.2",
+    "webpack-assets-manifest": "^5.2.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^7.2.1",
+    "webpack-hot-middleware": "^2.26.1",
+    "webpack-merge": "^5.10.0",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
+    "jquery.easing": "^1.4.1",
+    "resize-observer-polyfill": "^1.5.1",
+    "simplebar": "^6.2.5",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.1",
+    "what-input": "^5.2.12"
+  }
+}

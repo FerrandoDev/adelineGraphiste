@@ -1,0 +1,26 @@
+version: '4.34'
+
+services:
+  web:
+    build:
+      context: ../../_docker/php82
+    container_name: adeline-graphiste
+    restart: unless-stopped
+    environment:
+      - WP_CLI_ALLOW_ROOT=true
+      - VIRTUAL_HOST=adeline-graphiste.lan
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=adeline-graphiste.lan
+      - LETSENCRYPT_EMAIL=your-email@example.com
+    volumes:
+      - ./:/var/www/html
+      - ./docker/apache/adeline-graphiste.lan.conf:/etc/apache2/sites-enabled/adeline-graphiste.lan.conf
+      - ../../_docker/certs/adeline-graphiste.lan.crt:/etc/apache2/ssl/adeline-graphiste.lan.crt
+      - ../../_docker/certs/adeline-graphiste.lan.key:/etc/apache2/ssl/adeline-graphiste.lan.key
+      - ./docker/logs/apache:/var/log/apache2
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true

@@ -1,0 +1,117 @@
+{
+  "name": "roots/bedrock",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "authors": [
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    }
+  ],
+  "keywords": [
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "composer/installers": "^2.2",
+    "vlucas/phpdotenv": "^5.5",
+    "oscarotero/env": "^2.1",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/bedrock-disallow-indexing": "^2.0",
+    "roots/wordpress": "6.7.1",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.1.0",
+    "roots/acorn": "^4.3",
+
+    "illuminate/database": "10.43.0",
+    "illuminate/pagination": "10.43.0",
+    "illuminate/container": "10.43.0",
+
+    "mobiledetect/mobiledetectlib": "2.8.32.0",
+    "kamermans/guzzle-oauth2-subscriber": "1.0.12",
+    "guzzlehttp/guzzle": "7.9.2",
+    "enshrined/svg-sanitize": "0.18.0",
+    "vinkla/extended-acf": "13.3.0",
+
+    "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "3.1",
+    "wpackagist-plugin/duplicate-post": "4.5",
+    "wpackagist-plugin/regenerate-thumbnails": "3.1.6",
+    "wpackagist-plugin/w3-total-cache": "2.8.4",
+    "wpackagist-plugin/webp-express": "0.25.9",
+    "wpackagist-plugin/wordpress-seo": "24.3",
+    "wpackagist-plugin/widget-google-reviews": "5.2",
+    "laravel/helpers": "^1.7"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true,
+      "roots/wordpress-core-installer": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-update-cmd": "@securityService",
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\"",
+      "@securityService"
+    ],
+    "securityService": [
+      "rm -Rf web/wp/wp-content/themes/twenty*",
+      "rm -Rf web/wp/wp-content/plugins/hello.php",
+      "rm -f web/wp/readme.html",
+      "rm -f web/wp/wp-admin/install.php",
+      "rm -f web/wp/wp-config-sample.php",
+      "rm -f web/wp/xmlrpc.php"
+    ],
+    "test": [
+      "phpcs"
+    ],
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+  }
+}

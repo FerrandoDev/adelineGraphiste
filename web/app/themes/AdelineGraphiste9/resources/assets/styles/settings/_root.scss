@@ -1,0 +1,57 @@
+@use "sass:map";
+
+:root {
+    // header height
+    --header-height: #{fluid(
+            map.get($header-heights, defaut),
+            map.get($header-heights, desktop),
+            map.get($media-breakpoints, desktop) - 1,
+            map.get($media-breakpoints, desktop)
+        )};
+
+    // section gap
+    --section-gap: #{fluid(
+            map.get($section-gaps, min),
+            map.get($section-gaps, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+
+    // default font sizes
+    --h1-font-size: #{fluid(
+            map.get($h1-font-size, min),
+            map.get($h1-font-size, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+    --h2-font-size: #{fluid(
+            map.get($h2-font-size, min),
+            map.get($h2-font-size, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+    --h3-font-size: #{fluid(
+            map.get($h3-font-size, min),
+            map.get($h3-font-size, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+    --h4-font-size: #{fluid(
+            map.get($h4-font-size, min),
+            map.get($h4-font-size, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+    --h5-font-size: #{fluid(
+            map.get($h5-font-size, min),
+            map.get($h5-font-size, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+    --h6-font-size: #{fluid(
+            map.get($h6-font-size, min),
+            map.get($h6-font-size, max),
+            map.get($media-breakpoints, tablet),
+            map.get($media-breakpoints, desktop)
+        )};
+}

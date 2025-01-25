@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "sass:color";
+@use "sass:meta";
+
+// Color mixing
+@function mix-lighten($color, $percentage) {
+    @return color.mix(#fff, $color, $percentage);
+}
+
+@function mix-darken($color, $percentage) {
+    @return color.mix(#000, $color, $percentage);
+}
+
+// Colors
+@function set-color($color) {
+    @if color.lightness($color) > 70 {
+        @return $black;
+    } @else {
+        @return $white;
+    }
+}
+
+/* Typography */
+
+// em
+@function em($px_value, $base: $app-font-size) {
+    @if $px_value == 0 or meta.type-of($px_value) != "number" {
+        @return $px_value;
+    }
+
+    @return math.div($px_value, math.div($base, 1em));
+}
+
+// rem
+@function rem($px_value, $base: $app-font-size) {
+    @if $px_value == 0 or meta.type-of($px_value) != "number" {
+        @return $px_value;
+    }
+
+    @return math.div($px_value, math.div($base, 1em));
+}
+
+// clamp
+@function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
+    $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+    $slope-to-unit: $slope * 100;
+    $intercept-rem: -rem($min-size - $slope * $min-breakpoint);
+
+    @return clamp(#{-rem($min-size)}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{-rem($max-size)});
+}
+
+
+/* Variables type */
+
+@function is-map($var) {
+    @return meta.type-of($væar) == "map";
+}
+
+@function is-list($var) {
+    @return meta.type-of($var) == "list";
+}
