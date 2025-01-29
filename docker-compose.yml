@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: ../../_docker/php82
-    container_name: adeline-graphiste
+    container_name: adeline-graphiste-9
     restart: unless-stopped
     environment:
       - WP_CLI_ALLOW_ROOT=true

@@ -1,57 +1,61 @@
+// Configuration des icônes
 $icomoon-font-family: "icomoon";
 $icomoon-font-path: $path-fonts + "/icomoon";
 
-$icon-add: "\e900";
+// Icônes générales
+$icon-underline: "\e900";
 $icon-arrow-down: "\e901";
 $icon-arrow-left: "\e902";
 $icon-arrow-right: "\e903";
 $icon-arrow-up: "\e904";
 $icon-check: "\e905";
-$icon-checkbox-circle: "\e906";
-$icon-close-circle-fill: "\e907";
-$icon-close-circle: "\e908";
 $icon-close: "\e909";
+$icon-close-circle: "\e908";
+$icon-close-circle-fill: "\e907";
 $icon-earth: "\e90a";
 $icon-external-link: "\e90b";
+$icon-search: "\e91b";
+$icon-share: "\e91c";
+
+// Icônes sociales
 $icon-facebook-box: "\e90c";
 $icon-facebook-circle: "\e90d";
 $icon-facebook: "\e90e";
-$icon-heart: "\e90f";
-$icon-image: "\e910";
 $icon-instagram: "\e911";
 $icon-linkedin-box: "\e912";
 $icon-linkedin: "\e913";
-$icon-logout: "\e914";
-$icon-mail: "\e915";
-$icon-map-pin: "\e916";
 $icon-messenger: "\e917";
-$icon-movie: "\e918";
-$icon-play: "\e919";
 $icon-rss: "\e91a";
-$icon-search: "\e91b";
-$icon-share: "\e91c";
 $icon-snapchat: "\e91d";
 $icon-tiktok: "\e91e";
-$icon-trash: "\e91f";
 $icon-twitter-x: "\e920";
-$icon-user: "\e921";
 $icon-whatsapp: "\e922";
 $icon-youtube-fill: "\e923";
 $icon-youtube: "\e924";
 
+// Icônes d'action
+$icon-mail: "\e915";
+$icon-map-pin: "\e916";
+$icon-play: "\e919";
+$icon-trash: "\e91f";
+$icon-user: "\e921";
+$icon-heart: "\e90f";
+$icon-checkbox-circle: "\e906";
+$icon-image: "\e910";
+$icon-movie: "\e918";
+
 @font-face {
     font-family: "#{$icomoon-font-family}";
-    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?zaibs7");
+    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xnyuca");
     src:
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?zaibs7#iefix") format("embedded-opentype"),
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?zaibs7") format("truetype"),
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?zaibs7") format("woff"),
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?zaibs7##{$icomoon-font-family}") format("svg");
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xnyuca#iefix") format("embedded-opentype"),
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?xnyuca") format("truetype"),
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?xnyuca") format("woff"),
+        url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?xnyuca##{$icomoon-font-family}") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
-
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -68,6 +72,13 @@ $icon-youtube: "\e924";
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-underline:before {
+  content: "\e900";
+  color: #f9955a;
+}
+.icon-arrow-down:before {
+  content: "\e901";
+}
 .icon-arrow-left:before {
   content: "\e902";
 }

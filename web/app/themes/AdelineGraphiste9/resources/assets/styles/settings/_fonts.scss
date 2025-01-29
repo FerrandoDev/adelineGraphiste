@@ -1,9 +1,8 @@
 /* !! se rendre dans head.blade.php et supprimer les google fonts !! */
 
 @font-face {
-    font-family: 'Satoshi';
-    src: url($path-fonts + '/satoshi/Satoshi-Medium.woff2') format('woff2'),
-    url($path-fonts + '/satoshi/Satoshi-Medium.woff') format('woff');
+    font-family: 'ComingSoon';
+    src: url($path-fonts + '/Coming_Soon/ComingSoon-Regular.ttf') format('ttf');
     font-weight: 500;
     font-style: normal;
     font-display: swap;

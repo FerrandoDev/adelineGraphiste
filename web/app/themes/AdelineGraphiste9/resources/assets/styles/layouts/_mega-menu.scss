@@ -1,6 +1,133 @@
 .mega-menu {
   display: flex;
-  width: 100%;
+  align-items: center;
   justify-content: space-between;
-  padding: 18px;
+  width: 100%;
+  padding: 5px 18px;
+  background-color: $tertiary;
+  color: white;
+
+  .logo-header img {
+    width: 90px;
+    height: 90px;
+    background-color: $tertiary;
+    rotate: $deg-logo;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .nav-primary {
+    flex: 1; // Prend l'espace disponible
+    margin-left: 20px;
+  }
+
+  .nav-primary div ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 37px;
+  }
+
+  .nav-primary div ul li {
+    margin: 0 15px;
+  }
+
+  .nav-primary div ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    font-size: rem(25px);
+  }
+
+  .nav-primary div ul li a:hover {
+    color: $primary;
+  }
+
+  .nav-primary div ul li a.icon-underline:before {
+    display: none;
+  }
+
+  .nav-primary div ul li a.active {
+    color: $primary;
+    font-weight: 800;
+  }
+
+  .nav-primary div ul li a.active.icon-underline:before {
+    display: block;
+    position: absolute;
+    bottom: 24px;
+    left: -4px;
+    font-size: 64px;
+    font-weight: 400;
+    height: 0;
+    width: 100%;
+  }
+
+  //Accueil
+  .nav-primary div ul li:nth-child(1) a.active.icon-underline:before {
+    bottom: 18px;
+    left: -6px;
+    font-size: 54px;
+  }
+  //À propos
+  .nav-primary div ul li:nth-child(2) a.active.icon-underline:before {
+    left: -4px;
+    font-size: 64px;
+    bottom: 22px;
+  }
+  //Mes services
+  .nav-primary div ul li:nth-child(3) a.active.icon-underline:before {
+    left: -4px;
+    bottom: 33px;
+    font-size: 85px;
+  }
+  //Portfolio
+  .nav-primary div ul li:nth-child(4) a.active.icon-underline:before {
+    left: -10px;
+    font-size: 65px;
+  }
+  //Contact
+  .nav-primary div ul li:nth-child(5) a.active.icon-underline:before {
+    left: -12px;
+    font-size: 64px;
+  }
+  //FAQ
+  .nav-primary div ul li:nth-child(6) a.active.icon-underline:before {
+    left: -26px;
+    bottom: 21px;
+    font-size: 60px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 10px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      transition: background-color 0.3s ease;
+
+
+      img {
+        filter: invert(1);
+        width: 26px;
+        height: 26px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+
+    }
+  }
 }

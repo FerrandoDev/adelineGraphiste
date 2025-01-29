@@ -3,7 +3,7 @@
 /* Déclaration de variables */
 
 /*  Path */
-$theme-name: "cclimousine"; // à mettre à jour
+$theme-name: "adelineGraphiste9"; // à mettre à jour
 $path-assets: "/app/themes/" + $theme-name + "/resources/assets";
 $path-fonts: $path-assets + "/fonts";
 $path-image: $path-assets + "/images";
@@ -102,8 +102,8 @@ $section-gaps: (
 $section-gap: var(--section-gap);
 
 /*  Typographies */
-$font-text: "Poppins", "Arial", sans-serif;
-$font-title: "Satoshi", "Arial", sans-serif;
+$font-text: "Coming Soon", "Arial", sans-serif;
+$font-title: "Coming Soon", "Arial", sans-serif;
 $font-size-default: 16px !default;
 
 /* Transition duration */
@@ -160,3 +160,6 @@ $h6-font-size: (
     min: 14px,
     max: 16px,
 );
+
+
+$deg-logo : -7deg;
