@@ -11,6 +11,9 @@ use Roots\Sage\Container;
 use App\Features\Cpt\ProjetPostType;
 use App\Features\Cpt\ClientPostType;
 
+use App\Features\Taxonomy\CategoryProjectTaxo;
+use App\Features\Taxonomy\YearProjectTaxo;
+
 /**
  * Helper function for prettying up errors
  * @param string $message
@@ -122,6 +125,12 @@ add_action('acf/init', function () {
     ]);
 });
 
+
+// CUSTOM POST TYPE
 new ProjetPostType();
 new ClientPostType();
+
+//TAXONOMY
+new CategoryProjectTaxo();
+new YearProjectTaxo();
 
