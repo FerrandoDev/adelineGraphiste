@@ -7,7 +7,9 @@
 use App\Features\Acf\FieldGroups\Modules\_GlobalFlexible;
 use Roots\Sage\Config;
 use Roots\Sage\Container;
+
 use App\Features\Cpt\ProjetPostType;
+use App\Features\Cpt\ClientPostType;
 
 /**
  * Helper function for prettying up errors
@@ -121,4 +123,5 @@ add_action('acf/init', function () {
 });
 
 new ProjetPostType();
+new ClientPostType();
 
