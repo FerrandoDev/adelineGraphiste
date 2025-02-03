@@ -43,7 +43,7 @@ class ClientPostType
             'hierarchical'       => false,
             'menu_position'      => 5,
             'menu_icon'          => 'dashicons-id',
-            'supports'           => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+            'supports'           => ['title', 'thumbnail', 'custom-fields'],
             'show_in_rest'       => false, // Active l'éditeur Gutenberg
         ];
 
