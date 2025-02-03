@@ -6,6 +6,7 @@ use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
+use App\Features\Acf\Options\WebsiteOptionsPage;
 
 /**
  * Theme assets
@@ -130,3 +131,6 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+// Charge la page d'options
+WebsiteOptionsPage::register();

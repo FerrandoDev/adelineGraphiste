@@ -118,3 +118,82 @@ Keep track of development and community news.
 * Read and subscribe to the [Roots Blog](https://roots.io/blog/)
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+
+
+# 📌 Gérer les erreurs Deprecated en PHP 8+ (Sage 9 & Laravel Illuminate)
+
+## 1️⃣ Activer le mode debug
+
+Ajoute dans **`wp-config.php`** :
+
+```php
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+@ini_set('display_errors', 0);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+```
+
+🔹 **Les erreurs seront enregistrées dans `wp-content/debug.log`.**
+
+---
+
+## 2️⃣ Identifier l’origine de l’erreur
+
+Ajoute dans **`setup.php`** :
+
+```php
+error_log("🚨 Erreur détectée : " . debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS));
+```
+
+🔹 **Permet d’identifier quel fichier appelle une fonction obsolète.**
+
+---
+
+## 3️⃣ Mettre à jour les dépendances
+
+Dans le terminal :
+
+```sh
+composer update
+composer dump-autoload
+```
+
+Si nécessaire :
+
+```sh
+composer require illuminate/container:^10.0 --update-with-dependencies
+```
+
+---
+
+## 4️⃣ Corriger `getClass()` dans `Container.php`
+
+Si l’erreur concerne **`ReflectionParameter::getClass()`**, remplace dans **`vendor/illuminate/container/Container.php`** :
+
+```php
+$param->getClass();
+```
+
+Par :
+
+```php
+$param->getType();
+```
+
+⚠ **Ce changement sera écrasé lors d'une mise à jour Composer.**
+
+---
+
+## 🚀 Résumé
+
+✔ **Active `WP_DEBUG_LOG` pour enregistrer les erreurs**
+✔ **Utilise `debug_backtrace()` pour identifier l’origine des erreurs**
+✔ **Mets à jour `illuminate/container` avec Composer**
+✔ **Corrige `getClass()` en `getType()` si nécessaire**
+
+📌 **Ajoute ce guide à ton projet pour gérer rapidement les erreurs `Deprecated` en PHP 8+ !**
+
+---
+
+

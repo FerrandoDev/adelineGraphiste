@@ -128,12 +128,16 @@ Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?? true);
  * Debugging Settings
  */
 Config::define('WP_DEBUG_DISPLAY', false);
-Config::define('WP_DEBUG_DISPLAY', false);
-Config::define('WP_DEBUG_LOG', false);
+Config::define('WP_DEBUG_LOG', true);
 Config::define('SCRIPT_DEBUG', false);
 Config::define('DISALLOW_FILE_MODS', false);
-Config::define('DISPLAY_ERRORS', 'Off');
-Config::define('ERROR_REPORTING', E_ALL);
+Config::define('DISPLAY_ERRORS', 0);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+
+/**
+ * THEME INFO
+ */
+Config::define('THEME_NAME', 'AdelineGraphiste9');
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
