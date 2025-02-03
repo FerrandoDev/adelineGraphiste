@@ -13,6 +13,8 @@ use App\Features\Cpt\ClientPostType;
 
 use App\Features\Taxonomy\CategoryProjectTaxo;
 use App\Features\Taxonomy\YearProjectTaxo;
+use App\Features\Taxonomy\CityClientTaxo;
+use App\Features\Taxonomy\CategoryClientTaxo;
 
 /**
  * Helper function for prettying up errors
@@ -97,33 +99,57 @@ Container::getInstance()
             'view' => require dirname(__DIR__).'/config/view.php',
         ]);
     }, true);
+//
+//add_action('acf/init', function () {
+//    acf_add_local_field_group([
+//        'key' => 'group_flexible_content',
+//        'title' => 'Blocs Flexibles',
+//        'fields' => [
+//            [
+//                'key' => 'field_flexible_content',
+//                'label' => 'Contenu Flexible',
+//                'name' => 'flexible_content',
+//                'type' => 'flexible_content',
+//                'layouts' => _GlobalFlexible::getLayouts()
+//
+//            ],
+//        ],
+//
+//        'location' => [
+//            [
+//                [
+//                    'param' => 'post_type',
+//                    'operator' => '==',
+//                    'value' => 'page', // Ou tout autre type de post
+//                ],
+//            ],
+//        ],
+//    ]);
+//});
 
-add_action('acf/init', function () {
-    acf_add_local_field_group([
-        'key' => 'group_flexible_content',
-        'title' => 'Blocs Flexibles',
-        'fields' => [
-            [
-                'key' => 'field_flexible_content',
-                'label' => 'Contenu Flexible',
-                'name' => 'flexible_content',
-                'type' => 'flexible_content',
-                'layouts' => _GlobalFlexible::getLayouts()
+//Chargement des champs acf
+require_once dirname(get_theme_file_path()) . '/AdelineGraphiste9/app/Features/Acf/register-fields.php';
+require_once dirname(get_theme_file_path()) . '/AdelineGraphiste9/app/Features/Acf/register-taxonomies-fields.php';
+require_once dirname(get_theme_file_path()) . '/AdelineGraphiste9/app/Features/Acf/register-post-types-fields.php';
 
-            ],
-        ],
+//mets les champs acf en première place a chaque fois
+add_action('add_meta_boxes', function () {
+    global $wp_meta_boxes;
 
-        'location' => [
-            [
-                [
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'page', // Ou tout autre type de post
-                ],
-            ],
-        ],
-    ]);
-});
+    $post_types = get_post_types(['public' => true], 'names');
+
+    foreach ($post_types as $post_type) {
+        foreach ($wp_meta_boxes[$post_type]['normal']['high'] ?? [] as $key => $box) {
+            if (strpos($key, 'acf-') === 0) {
+                $acf_box = $wp_meta_boxes[$post_type]['normal']['high'][$key];
+                unset($wp_meta_boxes[$post_type]['normal']['high'][$key]);
+                $wp_meta_boxes[$post_type]['normal']['high'] = array_merge([$key => $acf_box], $wp_meta_boxes[$post_type]['normal']['high']);
+            }
+        }
+    }
+}, 99);
+
+
 
 
 // CUSTOM POST TYPE
@@ -131,6 +157,9 @@ new ProjetPostType();
 new ClientPostType();
 
 //TAXONOMY
-new CategoryProjectTaxo();
 new YearProjectTaxo();
+new CategoryProjectTaxo();
+
+new CategoryClientTaxo();
+new cityClientTaxo();
 

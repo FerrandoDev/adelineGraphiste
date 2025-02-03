@@ -1,27 +1,26 @@
 <?php
-// Sécurité : s'assurer que le fichier ne peut pas être chargé directement
+
+namespace App\Features\Acf;
+
 if (!defined('ABSPATH')) {
     exit;
 }
 
-$fields_path = realpath(get_template_directory() . '/../app/Features/Acf/FieldGroups/');
+$fields_path = dirname(get_theme_file_path())  . '/' . THEME_NAME . '/app/Features/Acf/FieldGroups/';
 
-if ($fields_path === false) {
-    die('Le chemin spécifié est invalide : ' . get_template_directory() . '/../app/Features/Acf/FieldGroups/');
+// Vérifier si le chemin est valide
+if (!is_dir($fields_path)) {
+    die('❌ Le chemin des FieldGroups est invalide : ' . $fields_path);
 }
 
-$files = glob($fields_path . '/*.php');
+// Récupérer les fichiers FieldGroups généraux
+$files = glob($fields_path . '/*.php') ?: [];
 
-if (!$files) {
-    die('Aucun fichier trouvé dans le répertoire : ' . $fields_path);
-}
 foreach ($files as $file) {
     require_once $file;
 
-    // Récupérer le nom de la classe depuis le fichier inclus
-    $className = 'App\\Features\\Acf\\FieldGroups\\' . basename($file, '.php');
+    $className = 'App\\Features\\Acf\\FieldGroups\\' . pathinfo($file, PATHINFO_FILENAME);
 
-    // Vérifier si la classe existe et appelle la méthode register()
     if (class_exists($className) && method_exists($className, 'register')) {
         $className::register();
     }

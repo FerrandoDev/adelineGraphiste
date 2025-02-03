@@ -2,6 +2,7 @@
 
 namespace App\Features\Acf\FieldGroups;
 
+use App\Features\Cpt\ClientPostType;
 use Extended\ACF\Fields\File;
 use Extended\ACF\Fields\Group;
 use Extended\ACF\Fields\Image;
@@ -11,28 +12,35 @@ use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Textarea;
+use Extended\ACF\Location;
+use function App\container;
 
 class WebsiteOptionsFieldGroup
 {
     public static function register()
     {
-        if (!function_exists('acf_add_local_field_group')) {
+        if (!function_exists('register_extended_field_group')) {
             return;
         }
 
-        acf_add_local_field_group([
+        if (function_exists('acf_add_options_page')) {
+            acf_add_options_page([
+                'page_title'  => 'Options du site',
+                'menu_title'  => 'Options du site',
+                'menu_slug'   => 'acf-options-settings',
+                'capability'  => 'edit_posts',
+                'redirect'    => false
+            ]);
+        }
+
+
+        register_extended_field_group([
             'key' => 'group_website_options',
             'title' => __('Options du site'),
             'style' => 'default',
             'hide_on_screen' => ['the_content'],
             'location' => [
-                [
-                    [
-                        'param' => 'options_page',
-                        'operator' => '==',
-                        'value' => 'acf-options-settings',
-                    ],
-                ],
+                Location::where('options_page', '==', 'acf-options-settings'),
             ],
             'fields' => self::getFields(),
         ]);
@@ -54,7 +62,6 @@ class WebsiteOptionsFieldGroup
                 ->layout('block')
                 ->max(4)
                 ->fields([
-                    // Vous pouvez intégrer une classe personnalisée pour `Picto`.
                     Select::make(__('Icône'), 'icon')
                         ->choices([
                             'icon-1' => __('Icône 1'),

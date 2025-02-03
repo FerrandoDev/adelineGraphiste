@@ -3,101 +3,25 @@
 namespace App\Features\Acf\FieldGroups\Modules;
 
 use Extended\ACF\Fields\Text;
-use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Repeater;
+use Extended\ACF\Fields\Image;
+use Extended\ACF\Fields\Layout;
 
 class ThreeImagesModule
 {
-    public static function getLayout(): array
+    public static function getLayout(): Layout
     {
-        return [
-            'key' => 'layout_3_images',
-            'name' => '3-images',
-            'label' => __('3 Images'),
-            'display' => 'block',
-            'sub_fields' => [
-                [
-                    'key' => 'field_title',
-                    'label' => __('Titre'),
-                    'name' => 'title',
-                    'type' => 'text',
-                    'instructions' => __('Ajoutez un titre pour ce module'),
-                ],
-                [
-                    'key' => 'field_images',
-                    'label' => __('Images'),
-                    'name' => 'images',
-                    'type' => 'repeater',
-                    'sub_fields' => [
-                        [
-                            'key' => 'field_image',
-                            'label' => __('Image'),
-                            'name' => 'image',
-                            'type' => 'image',
-                            'return_format' => 'array',
-                        ],
-                        [
-                            'key' => 'field_caption',
-                            'label' => __('Légende'),
-                            'name' => 'caption',
-                            'type' => 'text',
-                        ],
-                    ],
-                    'min' => 3,
-                    'max' => 3,
-                ],
-            ],
-        ];
+        return Layout::make(__('3 Images'), 'three-images')
+            ->fields([
+                Text::make(__('Titre'), 'title')->required(),
+                Repeater::make(__('Images'), 'images')
+                    ->fields([
+                        Image::make(__('Image'), 'image')->required(),
+                        Text::make(__('Légende'), 'caption'),
+                    ])
+                    ->min(3)
+                    ->max(3)
+                    ->buttonLabel(__('Ajouter une image')),
+            ]);
     }
 }
-
-// Ancien code commenté
-/*
-return [
-    'key' => 'layout_3_images',
-    'name' => '3-images',
-    'label' => __('3 Images'),
-    ...
-];
-*/
-
-
-//return [
-//    'key' => 'layout_3_images',
-//    'name' => '3-images',
-//    'label' => __('3 Images'),
-//    'display' => 'block',
-//    'sub_fields' => [
-//        [
-//            'key' => 'field_title',
-//            'label' => __('Titre'),
-//            'name' => 'title',
-//            'type' => 'text',
-//            'instructions' => __('Ajoutez un titre pour ce module'),
-//        ],
-//        [
-//            'key' => 'field_images',
-//            'label' => __('Images'),
-//            'name' => 'images',
-//            'type' => 'repeater',
-//            'sub_fields' => [
-//                [
-//                    'key' => 'field_image',
-//                    'label' => __('Image'),
-//                    'name' => 'image',
-//                    'type' => 'image',
-//                    'return_format' => 'array',
-//                ],
-//                [
-//                    'key' => 'field_caption',
-//                    'label' => __('Légende'),
-//                    'name' => 'caption',
-//                    'type' => 'text',
-//                ],
-//            ],
-//            'min' => 3,
-//            'max' => 3,
-//        ],
-//
-//    ],
-//];
