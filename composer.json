@@ -62,12 +62,12 @@
 
     "wpackagist-plugin/acf-content-analysis-for-yoast-seo": "3.1",
     "wpackagist-plugin/duplicate-post": "4.5",
+    "wpackagist-plugin/post-types-order": "2.3.3",
     "wpackagist-plugin/regenerate-thumbnails": "3.1.6",
     "wpackagist-plugin/w3-total-cache": "2.8.4",
     "wpackagist-plugin/webp-express": "0.25.9",
     "wpackagist-plugin/wordpress-seo": "24.3",
     "wpackagist-plugin/widget-google-reviews": "5.2",
-    "wpackagist-plugin/post-types-order": "2.3.3",
 
     "laravel/helpers": "^1.7"
   },

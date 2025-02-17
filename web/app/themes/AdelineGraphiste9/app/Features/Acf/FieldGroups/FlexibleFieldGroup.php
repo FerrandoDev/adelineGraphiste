@@ -6,7 +6,7 @@ use App\Features\Acf\FieldGroups\Modules\_GlobalFlexible;
 use Extended\ACF\Fields\FlexibleContent;
 use Extended\ACF\Location;
 
-class PageFieldGroup
+class FlexibleFieldGroup
 {
     public static function register(): void
     {
@@ -23,6 +23,7 @@ class PageFieldGroup
             ],
             'location' => [
                 Location::where('post_type', 'page'),
+                Location::where('post_type', 'projet')
             ],
             'style' => 'default',
             'position' => 'normal',

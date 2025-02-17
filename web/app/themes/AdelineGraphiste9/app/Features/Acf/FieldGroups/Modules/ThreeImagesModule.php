@@ -2,6 +2,8 @@
 
 namespace App\Features\Acf\FieldGroups\Modules;
 
+use Extended\ACF\ConditionalLogic;
+use Extended\ACF\Fields\ButtonGroup;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Image;
@@ -13,15 +15,35 @@ class ThreeImagesModule
     {
         return Layout::make(__('3 Images'), 'three-images')
             ->fields([
-                Text::make(__('Titre'), 'title')->required(),
+                ButtonGroup::make(__('Placement de la plus grande image de départ'), 'placement')
+                    ->choices(['Gauche', 'Droite', 'Haut'])
+                    ->required(),
                 Repeater::make(__('Images'), 'images')
                     ->fields([
-                        Image::make(__('Image'), 'image')->required(),
-                        Text::make(__('Légende'), 'caption'),
+                        Image::make(__('Grande image'), 'big-image')->required(),
+                        Image::make(__('Image du haut'), 'image-top')
+                            ->conditionalLogic([
+                                ConditionalLogic::where('placement', '!=', 2),
+                            ])
+                            ->required(),
+                        Image::make(__('Image du bas'), 'image-bottom')
+                            ->conditionalLogic([
+                                ConditionalLogic::where('placement', '!=', 2),
+                            ])
+                            ->required(),
+                        Image::make(__('Image de gauche'), 'image-left')
+                            ->conditionalLogic([
+                                ConditionalLogic::where('placement', '==', 2),
+                            ])
+                            ->required(),
+                        Image::make(__('Image de droite'), 'image-right')
+                            ->conditionalLogic([
+                                ConditionalLogic::where('placement', '==', 2),
+                            ])
+                            ->required(),
+
                     ])
-                    ->min(3)
-                    ->max(3)
-                    ->buttonLabel(__('Ajouter une image')),
+                    ->buttonLabel(__('Ajouter un groupe d\'images')),
             ]);
     }
 }

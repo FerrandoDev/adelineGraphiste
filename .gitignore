@@ -34,4 +34,5 @@ vendor/
 
 # Exception
 !web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/wp-media-folder
 !web/app/plugins/instagram-feed-pro
