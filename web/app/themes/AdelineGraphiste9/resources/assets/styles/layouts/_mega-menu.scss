@@ -20,6 +20,7 @@
   }
 
   .nav-primary {
+    display: none;
     flex: 1; // Prend l'espace disponible
     margin-left: 20px;
   }
@@ -43,6 +44,8 @@
     font-weight: 500;
     position: relative;
     font-size: rem(25px);
+    font-family: 'Coming Soon', sans-serif !important;
+
   }
 
   .nav-primary div ul li a:hover {
@@ -67,6 +70,7 @@
     font-weight: 400;
     height: 0;
     width: 100%;
+    font-family: 'icomoon' !important;
   }
 
   //Accueil
@@ -75,28 +79,33 @@
     left: -6px;
     font-size: 54px;
   }
+
   //À propos
   .nav-primary div ul li:nth-child(2) a.active.icon-underline:before {
     left: -4px;
     font-size: 64px;
     bottom: 22px;
   }
+
   //Mes services
   .nav-primary div ul li:nth-child(3) a.active.icon-underline:before {
     left: -4px;
     bottom: 33px;
     font-size: 85px;
   }
+
   //Portfolio
   .nav-primary div ul li:nth-child(4) a.active.icon-underline:before {
     left: -10px;
     font-size: 65px;
   }
+
   //Contact
   .nav-primary div ul li:nth-child(5) a.active.icon-underline:before {
     left: -12px;
     font-size: 64px;
   }
+
   //FAQ
   .nav-primary div ul li:nth-child(6) a.active.icon-underline:before {
     left: -26px;
@@ -105,7 +114,7 @@
   }
 
   .social-links {
-    display: flex;
+    display: none;
     gap: 10px;
 
     a {
@@ -128,6 +137,15 @@
         }
       }
 
+    }
+  }
+}
+
+@media (min-width: 1140px) {
+  .mega-menu {
+    .social-links,
+    .nav-primary {
+      display: flex;
     }
   }
 }
