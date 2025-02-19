@@ -4,7 +4,8 @@
 
   <div class="text-content">
 
-    <h1>{!! App::title() !!}</h1>
+{{--    <h1>{!! App::title() !!}</h1>--}}
+    <h1>Bienvenue dans mon univers !</h1>
     <p>AdelineGraphiste repose sur des compétences de designer <br>entièrement tournées vers la réalisation de vos rêves.</p>
     <p>Faisons briller votre marque ensemble !
     </p>

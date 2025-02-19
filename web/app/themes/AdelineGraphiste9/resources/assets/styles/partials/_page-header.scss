@@ -2,11 +2,11 @@
   overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   text-align: center;
-  gap: 37px;
-  padding: 2rem 1.5rem;
+  gap: 20px;
+  padding: 0;
   position: relative;
 
   .bg-image {
@@ -14,10 +14,12 @@
   }
 
   .text-content {
+    padding: 0 10%;
     max-width: 600px;
     margin-bottom: 2rem;
 
     h1 {
+      color: $primary;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
@@ -58,55 +60,50 @@
   }
 
   .video-content {
+    height: 100%;
     width: 100%;
-    max-width: 500px;
     position: relative;
+  }
 
-    img {
-      width: 100%;
-      height: auto;
-      min-width: 300px;
-      display: block;
-      border-radius: 10px;
-    }
+  .video-content img {
+    display: none;
+  }
 
-    video {
-      width: 68%;
-      height: 65%;
-      position: absolute;
-      top: 11%;
-      left: 16%;
-      border-radius: 5px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
+  .video-content video {
+    @include stretch-section-full-width();
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 }
 
-// 🎯 **Responsive Desktop**
-@media (min-width: 768px) {
+@media (min-width: 980px) {
   .page-header {
-    padding: 4rem 4.5rem 14rem;
+    padding: 4rem 4.5rem 0;
     flex-direction: row-reverse;
     justify-content: center;
     text-align: left;
     width: 100%;
     margin: 0 auto;
+    gap: 37px;
     align-items: start;
 
     .text-content {
-      max-width: 45%;
+      padding: 0;
+    }
+
+    h1 {
+      color: $black;
     }
 
     .video-content {
       max-width: 550px;
     }
-  }
-}
 
-
-@media (min-width: 980px) {
-  .page-header {
     .video-content video {
+      margin: 0;
       width: 79%;
       height: 48%;
       position: absolute;
@@ -115,9 +112,9 @@
     }
 
     .video-content img {
+      min-width: 300px;
       width: 114%;
       height: 394px;
-      min-width: 300px;
       display: block;
       margin-top: 164px;
     }
@@ -127,6 +124,7 @@
       z-index: -1;
       width: 120%;
       top: 0;
+      display: block;
       left: 0;
       overflow: hidden;
       min-width: 1333px;
