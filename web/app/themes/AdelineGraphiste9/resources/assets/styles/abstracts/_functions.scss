@@ -44,9 +44,9 @@
 @function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
     $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
     $slope-to-unit: $slope * 100;
-    $intercept-rem: -rem($min-size - $slope * $min-breakpoint);
+    $intercept-rem: rem($min-size - $slope * $min-breakpoint);
 
-    @return clamp(#{-rem($min-size)}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{-rem($max-size)});
+    @return clamp(#{rem($min-size)}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{rem($max-size)});
 }
 
 

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .mega-menu {
   display: flex;
   align-items: center;
@@ -8,8 +10,7 @@
   color: white;
 
   .logo-header img {
-    width: 90px;
-    height: 90px;
+    width: clamp(55px,10vw,90px);
     background-color: $tertiary;
     rotate: $deg-logo;
     transition: transform 0.3s ease;
