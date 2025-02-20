@@ -17,15 +17,15 @@ $black: #373231;
 
 $orange: #F9955A;
 $beige: #FFBF9A;
-$brown : #895440;
+$brown: #895440;
 $blue: #083294;
 
 // array colors
 $colors: (
-    "white": $white,
-    "black": $black,
-    "blue": $blue,
-    "orange": $orange,
+  "white": $white,
+  "black": $black,
+  "blue": $blue,
+  "orange": $orange,
 );
 
 // Gray colors
@@ -40,12 +40,12 @@ $gray-800: #333;
 $gray-900: #868686; // dark
 
 $grayscales: (
-    "white": $white,
-    "lightest": $gray-100,
-    "light": $gray-400,
-    "gray": $gray-600,
-    "dark": $gray-900,
-    "black": $black,
+  "white": $white,
+  "lightest": $gray-100,
+  "light": $gray-400,
+  "gray": $gray-600,
+  "dark": $gray-900,
+  "black": $black,
 );
 
 $primary: $orange;
@@ -53,13 +53,13 @@ $secondary: $beige;
 $tertiary: $brown;
 
 $theme-colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-    "tertiary": $tertiary,
-    "info": #529acc,
-    "success": #69b23a,
-    "warning": #f77f00,
-    "error": #E52B02,
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+  "info": #529acc,
+  "success": #69b23a,
+  "warning": #f77f00,
+  "error": #E52B02,
 );
 
 $info: map.get($theme-colors, "info");
@@ -75,10 +75,10 @@ $app-font-size: 16px !default; // !! ne pas y toucher (accessibilité) !!
 
 // media queries breakpoints
 $media-breakpoints: (
-    mobile:     320px,  // 20em
-    tablet:     640px,  // 40em
-    laptop:     960px,  // 60em // breakpoint où la sidebar se positionne à gauche où à droite (si le site contient une sidebar...)
-    desktop:    1280px, // 80em
+  mobile: 320px, // 20em
+  tablet: 640px, // 40em
+  laptop: 960px, // 60em // breakpoint où la sidebar se positionne à gauche où à droite (si le site contient une sidebar...)
+  desktop: 1280px, // 80em
 );
 
 $mobile: map.get($media-breakpoints, mobile);
@@ -88,15 +88,15 @@ $desktop: map.get($media-breakpoints, desktop);
 
 
 $container-sizes: (
-    defaut: 1064px,
-    small:  480px,
-    medium: 800px,
-    large:  1440px,
+  defaut: 1064px,
+  small: 480px,
+  medium: 800px,
+  large: 1440px,
 ) !default;
 
 $section-gaps: (
-    min: 60px,
-    max: 100px,
+  min: 60px,
+  max: 100px,
 );
 
 $section-gap: var(--section-gap);
@@ -119,47 +119,52 @@ $adminbar-height: var(--wp-admin--admin-bar--height, 0px);
 
 /* header heights */
 $header-heights: (
-    defaut: 60px,
-    desktop: 100px,
+  defaut: 60px,
+  desktop: 100px,
 );
 
 $header-height: var(--header-height);
 
 // Toute modification de cette variable impactera directement le @mixin h1-font-size();
 $h1-font-size: (
-    min: 32px,
-    max: 40px,
+  min: 32px,
+  max: 40px,
 );
 
 // Toute modification de cette variable impactera directement le @mixin h2-font-size();
 $h2-font-size: (
-    min: 26px,
-    max: 32px,
+  min: 26px,
+  max: 32px,
 );
 
 // Toute modification de cette variable impactera directement le @mixin h3-font-size();
 $h3-font-size: (
-    min: 20px,
-    max: 24px,
+  min: 20px,
+  max: 24px,
 );
 
 // Toute modification de cette variable impactera directement le @mixin h4-font-size();
 $h4-font-size: (
-    min: 18px,
-    max: 20px,
+  min: 18px,
+  max: 20px,
 );
 
 // Toute modification de cette variable impactera directement le @mixin h5-font-size();
 $h5-font-size: (
-    min: 16px,
-    max: 18px,
+  min: 16px,
+  max: 18px,
 );
 
 // Toute modification de cette variable impactera directement le @mixin h6-font-size();
 $h6-font-size: (
-    min: 14px,
-    max: 16px,
+  min: 14px,
+  max: 16px,
+);
+
+$p-font-size: (
+  min: 16px,
+  max: 20px,
 );
 
 
-$deg-logo : -7deg;
+$deg-logo: -7deg;
