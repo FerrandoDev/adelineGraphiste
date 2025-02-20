@@ -1,0 +1,14 @@
+.bandeau {
+  background-color: $tertiary;
+  color: $white;
+  padding: 5%;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .bandeau {
+    padding: 3% 10%;
+  }
+}

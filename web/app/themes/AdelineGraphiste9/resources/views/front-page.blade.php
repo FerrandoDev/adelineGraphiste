@@ -7,5 +7,8 @@
 {{--  @endphp--}}
 {{--    @include('layouts.flexibles')--}}
 @section('content')
+  @include('module.bandeau')
+  @include('module.rebond')
+
 
 @endsection
