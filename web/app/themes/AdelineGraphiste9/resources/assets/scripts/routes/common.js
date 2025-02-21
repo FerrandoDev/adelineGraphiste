@@ -1,8 +1,10 @@
 import ActiveLinkManager from '../components/nav-links';
+import Swiper from '../components/AllSwiper';
 export default {
   init() {
     // JavaScript to be fired on all pages
     new ActiveLinkManager();
+    Swiper.init();
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired

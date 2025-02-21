@@ -1,0 +1,126 @@
+.rebond {
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    border-radius: 20px;
+    margin: 20px 0 30px 0;
+    width: auto;
+    max-width: 90%;
+    align-items: start;
+    flex-direction: column;
+    background-color: white;
+    padding: 25px 27px;
+  }
+
+  .swiper-slide:empty {
+    background: none !important;
+  }
+
+  nav {
+    position: relative;
+    margin: 25px auto 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4px;
+    width: 85%;
+
+  }
+  .swiper-pagination {
+    display: flex;
+    margin: 0 auto;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    background: $tertiary;
+    border: 2px solid $white;
+    border-radius: 11px;
+    opacity: 1;
+    margin: 0 15px !important;
+    padding: 7px;
+    position: relative;
+    top: 0;
+  }
+
+  .swiper-pagination-bullet-active,
+  .swiper-pagination-bullet:hover {
+    background-color: $white;
+    border-color: $tertiary;
+    padding: 9px;
+  }
+
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+    position: relative;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: block;
+    position: absolute;
+    top: -13px;
+    left: 0;
+    rotate: -12deg;
+    font-family: icomoon !important;
+    font-size: 46px;
+  }
+
+  .swiper-button-prev::after {
+    content: $icon-arrow-left;
+    left: -39px;
+  }
+
+  .swiper-button-next::after {
+    content: $icon-arrow-right;
+  }
+
+  .swiper-button-next {
+    padding: 0 0 6px 13px;
+
+  }
+
+  .swiper-button-prev {
+    padding: 0 0 6px 11px;
+  }
+
+  h2 {
+    color: $primary;
+  }
+
+  p {
+    margin-top: 15px;
+  }
+
+  .cta {
+    padding: 10px;
+  }
+
+  a {
+    margin-top: 17px;
+    margin-left: auto;
+  }
+}
+
+//
+// @media screen and (min-width: $laptop) {
+//  .rebond {
+//
+//    nav{
+//      display: none;
+//    }
+//  }
+// }
