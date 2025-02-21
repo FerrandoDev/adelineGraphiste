@@ -67,6 +67,7 @@
       </li>
     </ul>
 
+    <a href="#" class="cta">Voir plus...</a>
   </article>
 </section>
 

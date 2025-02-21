@@ -4,9 +4,11 @@
 
 // Pour mettre en pleine largeur une section contenue à l"intérieur d"un container
 @mixin stretch-section-full-width {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
-
-
+@mixin box-shadow {
+  -webkit-box-shadow: 8px 8px 5px -5px $black;
+  box-shadow: 8px 8px 5px -5px $black;
+}

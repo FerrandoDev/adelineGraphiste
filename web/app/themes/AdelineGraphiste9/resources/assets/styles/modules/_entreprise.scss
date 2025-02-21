@@ -1,0 +1,22 @@
+.entreprise {
+  height: 100px;
+  background-color: $tertiary;
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 50px;
+
+  .flex {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  .item {
+    margin-right: 20px;
+  }
+
+  img {
+    object-fit: contain;
+    height: 80px;
+    @include box-shadow();
+  }
+}

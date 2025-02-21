@@ -1,10 +1,13 @@
 .projects {
   background-color: white;
+  padding-bottom: 50px;
+
   h2 {
     padding: 30px;
     text-align: center;
     color: $primary;
   }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -26,19 +29,32 @@
   img {
     width: 100%;
     object-fit: cover;
-    -webkit-box-shadow: 8px 8px 5px -5px $black;
-    box-shadow: 8px 8px 5px -5px $black;
+    @include box-shadow();
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 30px auto 0;
   }
 }
 
 @media (min-width: $tablet) {
-  .projects .grid {
-    grid-template-columns: repeat(3, 1fr);
+  .projects {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-    > .item:nth-last-child(1):nth-child(odd) {
+    .grid > .item:nth-last-child(1):nth-child(odd) {
       display: block;
       //grid-column: inherit;
       //width: 100%;
+    }
+
+    .cta {
+      width: 20%;
     }
   }
 }

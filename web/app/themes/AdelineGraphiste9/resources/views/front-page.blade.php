@@ -10,6 +10,7 @@
   @include('module.bandeau')
   @include('module.rebond')
   @include('module.projets')
+  @include('module.entreprise')
 
 
 @endsection
