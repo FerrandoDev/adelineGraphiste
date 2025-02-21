@@ -65,7 +65,7 @@
   .nav-primary div ul li a.active.icon-underline:before {
     display: block;
     position: absolute;
-    bottom: 24px;
+    bottom: 32px;
     left: -4px;
     font-size: 64px;
     font-weight: 400;
@@ -76,7 +76,7 @@
 
   //Accueil
   .nav-primary div ul li:nth-child(1) a.active.icon-underline:before {
-    bottom: 18px;
+    bottom: 27px;
     left: -6px;
     font-size: 54px;
   }
@@ -85,13 +85,13 @@
   .nav-primary div ul li:nth-child(2) a.active.icon-underline:before {
     left: -4px;
     font-size: 64px;
-    bottom: 22px;
+    bottom: 31px;
   }
 
   //Mes services
   .nav-primary div ul li:nth-child(3) a.active.icon-underline:before {
     left: -4px;
-    bottom: 33px;
+    bottom: 42px;
     font-size: 85px;
   }
 
@@ -110,7 +110,7 @@
   //FAQ
   .nav-primary div ul li:nth-child(6) a.active.icon-underline:before {
     left: -26px;
-    bottom: 21px;
+    bottom: 30px;
     font-size: 60px;
   }
 

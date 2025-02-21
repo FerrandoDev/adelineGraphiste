@@ -1,12 +1,14 @@
-<section class="page-header">
+<section class="page-header {{ is_front_page() ? 'home' : '' }}">
+
 
   <img class="bg-image" src="@asset('images/illu/bg-home.png')" alt="" aria-hidden="true">
 
   <div class="text-content">
 
-{{--    <h1>{!! App::title() !!}</h1>--}}
+    {{--    <h1>{!! App::title() !!}</h1>--}}
     <h1>Bienvenue dans mon univers !</h1>
-    <p>AdelineGraphiste repose sur des compétences de designer <br>entièrement tournées vers la réalisation de vos rêves.</p>
+    <p>AdelineGraphiste repose sur des compétences de designer <br>entièrement tournées vers la réalisation de vos
+      rêves.</p>
     <p>Faisons briller votre marque ensemble !
     </p>
 
