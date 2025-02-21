@@ -9,6 +9,9 @@
   padding: 0;
   position: relative;
 
+  &.home{
+    background-color: $white;
+  }
   .bg-image {
     display: none;
   }
@@ -36,23 +39,6 @@
         &:hover {
           color: lighten($black, 10%);
         }
-      }
-    }
-
-    .cta {
-      display: inline-block;
-      background: $primary;
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease;
-
-      &:hover {
-        background: darken($primary, 10%);
-        transform: scale(1.05);
       }
     }
   }
@@ -87,6 +73,10 @@
     margin: 0 auto;
     gap: 37px;
     align-items: start;
+
+    &.home{
+      background-color: transparent;
+    }
 
     .text-content {
       padding: 0;

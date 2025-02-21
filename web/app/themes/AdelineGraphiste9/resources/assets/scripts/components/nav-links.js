@@ -17,11 +17,11 @@ export default class ActiveLinkManager {
 
   setActiveOnLoad() {
     const currentURL = window.location.href;
-console.log(this.navLinks);
-console.log(currentURL);
+    // console.log(this.navLinks);
+    // console.log(currentURL);
     // Parcourt tous les liens pour trouver celui qui correspond à l'URL active
     this.navLinks.forEach(link => {
-      if (link.href === currentURL) {
+      if (currentURL.includes(link.href)) {
         link.classList.add(this.activeClass);
       } else {
         link.classList.remove(this.activeClass);
