@@ -9,6 +9,7 @@
 @section('content')
   @include('module.bandeau')
   @include('module.rebond')
+  @include('module.projets')
 
 
 @endsection

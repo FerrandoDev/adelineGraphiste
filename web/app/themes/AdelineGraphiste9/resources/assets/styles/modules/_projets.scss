@@ -1,0 +1,44 @@
+.projects {
+  background-color: white;
+  h2 {
+    padding: 30px;
+    text-align: center;
+    color: $primary;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+  }
+
+  .grid > .item:nth-last-child(1):nth-child(odd) {
+    display: none;
+    //grid-column: 1 / -1;
+    //width: 50%;
+    //justify-self: center;
+  }
+
+  .item {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    -webkit-box-shadow: 8px 8px 5px -5px $black;
+    box-shadow: 8px 8px 5px -5px $black;
+  }
+}
+
+@media (min-width: $tablet) {
+  .projects .grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    > .item:nth-last-child(1):nth-child(odd) {
+      display: block;
+      //grid-column: inherit;
+      //width: 100%;
+    }
+  }
+}
