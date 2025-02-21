@@ -1,0 +1,16 @@
+.cta {
+  display: inline-block;
+  background: $primary;
+  color: $black;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: darken($primary, 10%);
+    transform: scale(1.05);
+  }
+}
