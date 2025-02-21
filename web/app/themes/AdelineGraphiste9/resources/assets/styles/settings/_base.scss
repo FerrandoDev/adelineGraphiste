@@ -1,6 +1,11 @@
 * {
   font-family: $font-text !important;
 }
+body {
+  background-image: url('../../images/illu/site-bg-image.png');
+  background-repeat: repeat-y;
+  background-size: 100vw;
+}
 h1 {
   font-size: var(--h1-font-size);
 }

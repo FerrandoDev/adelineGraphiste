@@ -1,7 +1,14 @@
+/* Abstracts */
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+@import "abstracts/icomoon";
 
 /** Import theme styles */
 @import "components/cta";
 @import "components/forms";
+@import "components/swiper";
 
 @import "layouts/header";
 @import "layouts/sidebar";
@@ -9,14 +16,6 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
-
-
-/* Abstracts */
-@import "abstracts/variables";
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/placeholders";
-@import "abstracts/icomoon";
 
 /* Settings */
 @import "settings/base";
@@ -36,14 +35,16 @@
 
 
 /* Modules */
+
 @import "modules/page-header-home";
+@import "modules/bandeau";
 @import "modules/faq";
 @import "modules/video";
 @import "modules/intro";
 @import "modules/wysiwyg";
 @import "modules/text-image";
 @import "modules/citation";
-@import "modules/carousel";
+@import "modules/rebond";
 @import "modules/3-images";
 
 /* Pages */
