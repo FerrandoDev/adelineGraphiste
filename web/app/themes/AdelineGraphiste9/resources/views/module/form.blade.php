@@ -1,8 +1,9 @@
 <article class="form">
-  <h2>Une idée ? Un projet ?</h2>
+  <h2 class="phone-only">Une idée ? Un projet ?</h2>
   <p class="phone-only">(Remplis le formulaire ci-dessous)</p>
   <div class="form-illu-container">
     <img class="desktop-only" src="@asset('images/illu/illu-form-complete.png')" alt="">
+    <p class="desktop-only first-text"> Une idée ? Un projet ?</p>
     <p class="second-text desktop-only">Un investissement dans ma créativité est un investissement dans le succès de
       votre entreprise.</p>
     <p class="third-text desktop-only">Cliquer sur commencer <br> pour remplir le formulaire</p>

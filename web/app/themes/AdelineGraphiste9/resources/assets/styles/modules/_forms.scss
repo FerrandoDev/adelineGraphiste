@@ -66,27 +66,27 @@
       text-align: left;
       color: $black;
       max-width: 250px;
-      font-size: rem(22px);
     }
 
-    h2 {
-      top: 416px;
-      max-width: 251px;
-      left: 688px;
+    .first-text,
+    .second-text,
+    .third-text {
+      left: 575px;
+      font-size: rem(23px);
+      line-height: 29px;
+    }
+
+    .first-text {
+      top: 315px;
     }
 
     .second-text {
       top: 135px;
-      left: 575px;
       max-width: 300px;
-      font-size: 23px;
-      line-height: 29px;
     }
 
     .third-text {
       top: 402px;
-      left: 574px;
-      line-height: 28px;
     }
 
     .iframe {
