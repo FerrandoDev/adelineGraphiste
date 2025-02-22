@@ -45,6 +45,7 @@
   .projects {
     .grid {
       grid-template-columns: repeat(3, 1fr);
+      padding: 10px 45px;
     }
 
     .grid > .item:nth-last-child(1):nth-child(odd) {

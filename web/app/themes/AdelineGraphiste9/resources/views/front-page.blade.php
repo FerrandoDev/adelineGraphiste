@@ -11,6 +11,7 @@
   @include('module.rebond')
   @include('module.projets')
   @include('module.entreprise')
+  @include('module.form')
 
 
 @endsection
