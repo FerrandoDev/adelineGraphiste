@@ -12,6 +12,8 @@
   @include('module.projets')
   @include('module.entreprise')
   @include('module.form')
+  @include('module.testimonial')
+
 
 
 @endsection
