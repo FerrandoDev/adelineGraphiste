@@ -28,7 +28,6 @@ export default class InfiniteMarquee {
    * Initialise le défilement infini : duplique le contenu et lance l'animation GSAP.
    */
   init() {
-    console.log(this.container);
     if (!this.container) return
 
     // Duplique le contenu pour permettre un défilement en continu
