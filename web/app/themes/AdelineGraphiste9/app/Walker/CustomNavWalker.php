@@ -10,7 +10,7 @@ class CustomNavWalker extends Walker_Nav_Menu {
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
 
         // Ajoute une classe personnalisée aux balises <a>
-        $class_names = 'nav-links icon-underline ' . esc_attr($class_names);
+        $class_names = 'nav-links sidetext icon-underline ' . esc_attr($class_names);
 
         $output .= sprintf(
             '<li class="%s"><a href="%s" class="%s">%s</a>',

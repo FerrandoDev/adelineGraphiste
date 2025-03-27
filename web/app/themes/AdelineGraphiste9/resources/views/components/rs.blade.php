@@ -10,3 +10,9 @@
     <img class="logo-linkedin" src="@asset('images/svg/icon/linkedin-box.svg')" alt="Linkedin" />
   </a>
 </div>
+<div class="mail">
+  <a href="mailto:adelinegraphiste@gmail.com" target="_blank" rel="noopener"
+     aria-label="Adresse mail pour me contacter">
+    adelinegraphiste@gmail.com
+  </a>
+</div>

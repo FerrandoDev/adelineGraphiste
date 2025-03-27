@@ -46,12 +46,11 @@ $icon-movie: "\e918";
 
 @font-face {
     font-family: "#{$icomoon-font-family}";
-    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xnyuca");
-    src:
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot?xnyuca#iefix") format("embedded-opentype"),
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?xnyuca") format("truetype"),
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?xnyuca") format("woff"),
-        url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?xnyuca##{$icomoon-font-family}") format("svg");
+  src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot");
+    src: url("#{$icomoon-font-path}/#{$icomoon-font-family}.eot") format("embedded-opentype"),
+    url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf") format("truetype"),
+    url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff") format("woff"),
+    url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg#{$icomoon-font-family}") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
